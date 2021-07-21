@@ -36,6 +36,7 @@ io.on('connection', (socket) => {
     if(firstClient) {
         io.sockets.emit('message', 'Find the Queen has Commenced!')
         new FindTheQueen(firstClient, socket);
+        firstClient = null;
         
     }
     else{
